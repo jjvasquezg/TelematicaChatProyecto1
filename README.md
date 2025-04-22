@@ -12,7 +12,7 @@ El sistema permite que los usuarios interactúen en tiempo real, enviando y reci
 ## ⚙️ Desarrollo
 
 ### Tecnologías usadas:
-- Lenguajes: **C (servidor)**, **C++ (cliente)**
+- Lenguajes: **C++ (servidor)**, **C++ (cliente)**
 - API: **Sockets de Berkeley (AF_INET, SOCK_STREAM)**
 - Protocolo de red: **TCP/IP**
 - Comunicación entre máquinas virtuales: **Tailscale**
