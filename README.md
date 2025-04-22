@@ -1,4 +1,4 @@
-# Chat por Sockets TCP - Cliente en C++ y Servidor en C
+# Chat por Sockets TCP - Cliente y Servidor en C++
 
 ## 🧹 Introducción
 
