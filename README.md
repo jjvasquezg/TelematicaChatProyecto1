@@ -3,7 +3,7 @@
 ## 🧹 Introducción
 
 Este proyecto consiste en la implementación de un sistema de chat basado en la API de Sockets de Berkeley. Utiliza el protocolo TCP para permitir la comunicación bidireccional entre múltiples clientes conectados simultáneamente a un servidor.  
-El servidor está programado en **C**, mientras que los clientes están desarrollados en **C++**, lo cual demuestra la interoperabilidad entre lenguajes utilizando una interfaz común de sockets.
+Tanto el servidor como los clientes están desarrollados en **C++**, lo cual demuestra la interoperabilidad de este lenguaje utilizando una interfaz común de sockets.
 
 El sistema permite que los usuarios interactúen en tiempo real, enviando y recibiendo mensajes, con identificación de cada usuario a través de su nombre. Las pruebas se realizaron utilizando tres máquinas virtuales conectadas a través de Tailscale.
 
@@ -27,6 +27,7 @@ El sistema permite que los usuarios interactúen en tiempo real, enviando y reci
 - Notificación al servidor y a los demás clientes cuando un usuario se conecta o se desconecta.
 - Mensajes formateados con el nombre del usuario remitente.
 - Visualización de mensajes directamente en la consola del servidor, para propósitos de monitoreo.
+- Generación de logs en un archivo para registrar eventos de conexión y desconexión de usuarios.
 
 ---
 
@@ -37,6 +38,7 @@ El sistema permite que los usuarios interactúen en tiempo real, enviando y reci
 - La arquitectura cliente-servidor es estable y escalable para un número razonable de usuarios concurrentes.
 - El sistema distingue claramente entre mensajes propios y de otros usuarios.
 - Manejo de errores básico en conexiones, envío y recepción de datos.
+- Generación de logs persistentes de actividad del servidor.
 
 ### ✨ Posibles Mejoras:
 Aunque el proyecto cumple todos los requisitos establecidos, existen varios aspectos que podrían explorarse para enriquecer o extender sus funcionalidades:
@@ -48,6 +50,10 @@ Aunque el proyecto cumple todos los requisitos establecidos, existen varios aspe
 - **Soporte para comandos internos**, como `/users` para listar usuarios conectados.
 
 ---
+
+## Video
+
+-
 
 ## 🧠 Conclusiones
 
