@@ -1,4 +1,6 @@
 
+#include <fstream>
+#include <ctime>
 #include <iostream>
 #include <thread>
 #include <vector>
@@ -28,6 +30,17 @@ bool nombre_valido(const std::string& nombre_usuario) {
     return true;
 }
 
+void escribir_log(const std::string& evento) {
+    std::ofstream log("chat.log", std::ios::app);  // modo append
+    if (log.is_open()) {
+        std::time_t now = std::time(nullptr);
+        char* timestamp = std::ctime(&now);
+        timestamp[strlen(timestamp) - 1] = '\0';  // quitar el salto de línea
+        log << "[" << timestamp << "] " << evento << std::endl;
+    }
+}
+
+
 void manejar_cliente(int cliente_sock) {
     char buffer[1024];
     std::string nombre_usuario;
@@ -40,6 +53,7 @@ void manejar_cliente(int cliente_sock) {
         return;
     }
     nombre_usuario = buffer;
+
 
     // Verificar si el nombre es válido (no está en uso)
     while (!nombre_valido(nombre_usuario)) {
@@ -61,6 +75,7 @@ void manejar_cliente(int cliente_sock) {
         clientes.push_back({cliente_sock, nombre_usuario});
     }
 
+    escribir_log(nombre_usuario + " se ha conectado.");
     // Anunciar en el servidor que el usuario se ha unido
     std::cout << "Nuevo usuario conectado: " << nombre_usuario << std::endl;
 
@@ -93,6 +108,8 @@ void manejar_cliente(int cliente_sock) {
                     send(cli.socket, msg_salida.c_str(), msg_salida.size(), 0);
                 }
             }
+
+            escribir_log(nombre_usuario + " se ha desconectado.");
 
             // Mostrar el mensaje de desconexión en el servidor
             std::cout << msg_salida << std::endl;
