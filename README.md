@@ -1,5 +1,13 @@
 # Chat por Sockets TCP - Cliente y Servidor en C++
 
+## Proyecto realizado por: Juan Jose Vasquez Gomez y Santiago Alvarez Peña
+
+## Video Explicación
+
+- [Video explicativo y demostrativo del funcionamiento del proyecto](https://drive.google.com/file/d/1Kr6AtPX-kUrROCMsr9KEXbfkC2H8ee9o/view?usp=sharing)
+
+---
+
 ## 🧹 Introducción
 
 Este proyecto consiste en la implementación de un sistema de chat basado en la API de Sockets de Berkeley. Utiliza el protocolo TCP para permitir la comunicación bidireccional entre múltiples clientes conectados simultáneamente a un servidor.  
@@ -30,6 +38,16 @@ El sistema permite que los usuarios interactúen en tiempo real, enviando y reci
 - Generación de logs en un archivo para registrar eventos de conexión y desconexión de usuarios.
 
 ---
+## Funcionamiento
+
+1. Descargue los archivos servidor.cpp y cliente.cpp (Archivos cliente puede usar cuantos quiera, pero por seguridad lo restringimos a 5)
+2. Distribuya estos archivos en las maquinas virtuales que desee (En nuestro caso fueron 2 Maquinas Cliente y 1 Maquina Servidor)
+3. Ingrese a los archivos cliente y asegurese de apuntar a la ip del servidor, además asegurese de estar conectado o direccionado a esta red del servidor, para modificar la ip ingrese a la linea 37 del codigo cliente.cpp y modifiquela
+4. Guarde los codigos y compilelos con el comando g++ servidor.cpp -o servidor -pthread y g++ cliente.cpp -o cliente -pthread
+5. Luego de compilar ejecute primero el servidor con el comando ./servidor, y luego ejecute cada uno de los clientes con el comando ./cliente
+6. Listo ya tienes tu aplicación de chat a través de sockets funcionando.
+
+---
 
 ## ✅ Aspectos Logrados y Potenciales Mejoras
 
@@ -50,10 +68,6 @@ Aunque el proyecto cumple todos los requisitos establecidos, existen varios aspe
 - **Soporte para comandos internos**, como `/users` para listar usuarios conectados.
 
 ---
-
-## Video
-
--
 
 ## 🧠 Conclusiones
 
